@@ -8,20 +8,27 @@ Created on Fri Oct  5 16:09:19 2018
 def solve():
     """
     Solve the 55th Euler problem.
-
-    Evalue the number of Lynchrel number below ten-thousand..
+    Evalue the number of Lychrel number below ten-thousand..
     """
+    number_of_Lychrel_number=0 
+    
     for i in range (1,10000):
-        compteur=0
-        while compteur<50 and isPalyndrom
-    
-    
-    
-    return()
         
-
-
-
+        i+=rev(i) # A palyndrom maybe a Lychrel number, so we must do the first addition before the WHILE loop.
+        increment=1 # Not 0, because we already did an addition.
+        
+        while not isPalyndrom(i): 
+        
+            if increment<50:
+                i+=rev(i)
+                increment+=1
+            else:
+                number_of_Lychrel_number+=1
+                break # quit the WHILE loop
+                
+    return(number_of_Lychrel_number)
+    
+        
 def rev(n):
     """
     Returns the reversed number.
@@ -29,15 +36,13 @@ def rev(n):
     """
     return int(str(n)[::-1])
     
-print(rev(12345))
 
-
-def isPalyndrom(n):
+def isPalyndrom(n): #check if n is a palyndrom
     return n==rev(n)
     
-    
 
-print(isPalyndrom(545))
+assert(isPalyndrom(4994))
+print(solve())
 
 
 
